@@ -19,10 +19,9 @@ if (USE_MYMATH)
   # link SqrtLibrary to tutorial_compiler_flags
   target_link_libraries(SqrtLibrary PUBLIC tutorial_compiler_flags)
 
-  # TODO 1: Include CheckCXXSourceCompiles
 include(checkCXXSourceCompiles)
 
-  # TODO 2: Use check_cxx_source_compiles with simple C++ code to verify
+  # Use check_cxx_source_compiles with simple C++ code to verify
   # availability of:
   # * std::log
   # * std::exp
@@ -41,16 +40,6 @@ check_cxx_source_compiles("
     return 0;
   }
 " HAVE_EXP)
-
-  # Hint: Sample C++ code which uses log:
-  # #include <cmath>
-  # int main() {
-  #   std::log(1.0);
-  #   return 0;
-  # }
-
-  # TODO 3: Conditionally on HAVE_LOG and HAVE_EXP, add private compile
-  # definitions "HAVE_LOG" and "HAVE_EXP" to the SqrtLibrary target.
 
   # Hint: Use target_compile_definitions()
   if(HAVE_LOG AND HAVE_EXP)

@@ -25,10 +25,9 @@ endif()
 # link MathFunctions to tutorial_compiler_flags
 target_link_libraries(MathFunctions PUBLIC tutorial_compiler_flags)
 
-# TODO 1: Create a variable called installable_libs that is a list of all
+# Create a variable called installable_libs that is a list of all
 # libraries we want to install (e.g. MathFunctions and tutorial_compiler_flags)
 # Then install the installable libraries to the lib folder.
-# Hint: Use the TARGETS and DESTINATION parameters
 
 set(installable_libs MathFunctions tutorial_compiler_flags)
 if(TARGET SqrtLibrary)
@@ -36,7 +35,6 @@ if(TARGET SqrtLibrary)
 endif()
 install(TARGETS ${installable_libs} DESTINATION lib)
 
-# TODO 2: Install the library headers to the include folder.
-# Hint: Use the FILES and DESTINATION parameters
+# Install the library headers to the include folder.
 
 install(FILES MathFunctions.h DESTINATION include)
